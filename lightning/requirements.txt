@@ -1,0 +1,7 @@
+langchain==0.3.13
+langchain-community==0.3.13
+Flask==3.1.0
+sentence-transformers==3.3.1
+accelerate==1.2.1
+xformers==0.0.29
+pymilvus==2.5.2

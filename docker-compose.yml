@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile  # Specify the Dockerfile explicitly
+    ports:
+      - "8000:8000"  # Map Django's default port to the host
+    volumes:
+      - ./Backend:/app  # Mount the backend directory for development purposes
+    working_dir: /app  # Set the working directory inside the container
+    command: python manage.py runserver 0.0.0.0:8000  # Ensure the server binds to all interfaces
+    environment:
+      - PYTHONUNBUFFERED=1  # Enable unbuffered output for better logging
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile  # Specify the Dockerfile explicitly
+    ports:
+      - "8501:8501"  # Map Streamlit's default port to the host
+    volumes:
+      - ./Frontend:/app  # Mount the frontend directory for development purposes
+    working_dir: /app  # Set the working directory inside the container
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0  # Ensure Streamlit binds to all interfaces
+
+
+
+

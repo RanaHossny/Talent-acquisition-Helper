@@ -1,0 +1,79 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "pdf_toc": [],
+    "pages": 1,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0,
+        "ocr_engine": "none"
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 0,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "computed_toc": [
+        {
+            "title": "Reem Ayman",
+            "level": 1,
+            "page": 0
+        },
+        {
+            "title": "Professional Experience",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Data/ML Testing Intern",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Junior Game Developer",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Education",
+            "level": 1,
+            "page": 0
+        },
+        {
+            "title": "Certificates",
+            "level": 1,
+            "page": 0
+        },
+        {
+            "title": "Publications",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Skills",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Software Engineering and Testing",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "Projects",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "The Matrix: Escaped - Academic Project",
+            "level": 3,
+            "page": 0
+        }
+    ]
+}

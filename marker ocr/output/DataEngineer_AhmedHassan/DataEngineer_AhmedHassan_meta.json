@@ -1,0 +1,59 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "pdf_toc": [],
+    "pages": 3,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0,
+        "ocr_engine": "none"
+    },
+    "block_stats": {
+        "header_footer": 2,
+        "code": 0,
+        "table": 0,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "computed_toc": [
+        {
+            "title": "AHMED HASSAN",
+            "level": 1,
+            "page": 0
+        },
+        {
+            "title": "SUMMARY",
+            "level": 2,
+            "page": 0
+        },
+        {
+            "title": "EDUCATION",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "WORK EXPERIENCE",
+            "level": 4,
+            "page": 0
+        },
+        {
+            "title": "Advanced Analytics",
+            "level": 3,
+            "page": 0
+        },
+        {
+            "title": "AUG 2020 - JAN 2022\nCorelia, France — Data Engineer",
+            "level": 3,
+            "page": 1
+        },
+        {
+            "title": "CERTIFICATIONS",
+            "level": 2,
+            "page": 2
+        }
+    ]
+}

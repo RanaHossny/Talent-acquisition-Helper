@@ -5,8 +5,28 @@ from rest_framework import status
 from rest_framework.generics import GenericAPIView, CreateAPIView
 from .serializers import LoginSerializer, SignupSerializer
 from rest_framework.permissions import AllowAny
+from rest_framework import permissions
+from rest_framework.views import APIView
+from rest_framework.exceptions import NotFound
+from .models import UserCollection
+from .serializers import UserCollectionSerializer
 
+class UserCollectionRetrieveView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
 
+    def get(self, request, *args, **kwargs):
+        # Get the authenticated user
+        user = request.user
+
+        try:
+            # Get the user's collection
+            collection = UserCollection.objects.get(user=user)
+        except UserCollection.DoesNotExist:
+            raise NotFound("Collection not found for this user.")
+
+        # Serialize the collection and return the response
+        serializer = UserCollectionSerializer(collection)
+        return Response(serializer.data)
 
 class SignUpView(CreateAPIView):
     serializer_class = SignupSerializer

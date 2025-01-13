@@ -20,6 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('chatbot/', include('chatbot.urls')),  # Include URLs from the app
-    path('api/auth/', include('accounts.urls')),
+    path('api/', include('accounts.urls')),
+    path('retriever/', include('document_retriever_manager.urls')),
+
 
 ]

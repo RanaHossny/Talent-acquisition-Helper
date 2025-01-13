@@ -4,9 +4,11 @@ from django.contrib.auth.models import User
 class Conversation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True) 
     created_at = models.DateTimeField(auto_now_add=True)
+    token_valid = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"Conversation {self.id} created at {self.created_at} by {self.user.username}"
+        return f"Conversation {self.id} created at {self.created_at} by {self.user.username}, Token valid: {self.token_valid}"
+
 
 class Message(models.Model):
     sender = models.CharField(max_length=10)  # e.g., 'user' or 'bot'

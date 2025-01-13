@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import SignUpView, LoginView
+from .views import SignUpView, LoginView,UserCollectionRetrieveView
 
 urlpatterns = [
-    path('signup/', SignUpView.as_view(), name='signup'),
-    path('login/', LoginView.as_view(), name='login'),
+    path('auth/signup/', SignUpView.as_view(), name='signup'),
+    path('auth/login/', LoginView.as_view(), name='login'),
+    path('collection/', UserCollectionRetrieveView.as_view(), name='user-collection-retrieve'),
+
 ]

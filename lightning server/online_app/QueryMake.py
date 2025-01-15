@@ -19,7 +19,6 @@ class QueryMaker:
         self.model_loader = model_loader
         self.end_token = end_token
         self.util_manager=UtilsClass()
-        self.previous_context=None
 
     def ask_query(self, query_user):
         """
@@ -39,8 +38,6 @@ class QueryMaker:
                     "Do NOT answer the question, just reformulate it if needed, otherwise return it as is. "
                     "Only return the final standalone question. "
                     f"This is the history: {memory_data} "
-                    f"This is the previous context need only if you need it: {self.previous_context} "
-
                     f"{self.end_token}"
                 )
             },
@@ -56,7 +53,6 @@ class QueryMaker:
             retrieved_texts = []
 
         retrieved_texts=self.util_manager.format_docs(retrieved_texts)
-        self.previous_context=retrieved_texts
         # Prepare the messages for the text generation pipeline
         messages = [
             {

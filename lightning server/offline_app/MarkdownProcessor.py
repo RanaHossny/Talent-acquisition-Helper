@@ -7,7 +7,7 @@ class MarkdownProcessor:
     def __init__(self, extracted_folder_path='/content/drive/MyDrive/output'):
         self.extracted_folder_path = extracted_folder_path
         TextEmbedding_model = TextEmbedding(device="cuda")
-        self.text_splitter = SemanticChunker(TextEmbedding_model,breakpoint_threshold_type="gradient")
+        self.text_splitter = SemanticChunker(TextEmbedding_model,breakpoint_threshold_type="gradient",breakpoint_threshold_amount=85)
         self.my_utils=UtilsClass()
 
 

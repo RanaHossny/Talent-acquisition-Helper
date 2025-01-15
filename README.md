@@ -51,3 +51,8 @@ Key Applications:
 6. Update the previous retrieved documents.
 7. Use the updated retrieved documents, query, and memory to generate the response.
 ![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/Screenshot%202025-01-15%20202206.png)
+
+# The sequence Diagrams:
+![User login and data processing](https://github.com/RanaHossny/rag_chat/blob/main/image.png)
+![AI query](https://github.com/RanaHossny/rag_chat/blob/main/Screenshot%202025-01-15%20132316.png)
+![chat history](https://github.com/RanaHossny/rag_chat/blob/main/Screenshot%202025-01-15%20204112.png)(not total implemented)

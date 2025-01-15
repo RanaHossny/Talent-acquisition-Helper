@@ -30,7 +30,7 @@ Key Applications:
   - Manages user authentication and account operations.
 
 ## System Architecture Diagram
-![System Architecture Diagram](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/Screenshot%202025-01-15%20201435.png)
+![System Architecture Diagram](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20201435.png)
 
 # Offline App Process
 
@@ -38,7 +38,7 @@ Key Applications:
 2. Use Marker OCR to extract the contents from the PDFs.
 3. Perform semantic chunking using MiniLM-L6-v2 text embedding.
 4. Store the chunks in Milvus Cloud and use stella_en_400M_v5 for vector representation.
-![Offline App Process](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/Screenshot%202025-01-15%20202419.png)
+![Offline App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20202419.png)
 
 
 # Online App Process
@@ -50,10 +50,10 @@ Key Applications:
 5. Use the standalone question to retrieve documents from the Milvus database.
 6. Update the previous retrieved documents.
 7. Use the updated retrieved documents, query, and memory to generate the response.
-![Online App Process](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/Screenshot%202025-01-15%20202206.png)
+![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20202206.png)
 
 # The sequence Diagrams:
 note :chat history (not total implemented)
-![User login and data processing](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/image.png)
-![AI query](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/Screenshot%202025-01-15%20132316.png)
-![chat history](https://github.com/RanaHossny/rag_chat/blob/images_for_readme/main/Screenshot%202025-01-15%20204112.png)
+![User login and data processing](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/image.png)
+![AI query](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20132316.png)
+![chat history](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20204112.png)

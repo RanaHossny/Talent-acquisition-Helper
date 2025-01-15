@@ -49,7 +49,7 @@ Key Applications:
 4. Insert the chained query into LLM (Llama 3.2 Instruct) to generate a standalone question.
 5. Use the standalone question to retrieve documents from the Milvus database.
 7. Use the updated retrieved documents, query, and memory to generate the response.
-![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%2025-01-15%235734.png)
+![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20235734.png)
 
 # The sequence Diagrams:
 note :chat history (not total implemented)

@@ -12,6 +12,9 @@ from .models import UserCollection
 from .serializers import UserCollectionSerializer
 
 class UserCollectionRetrieveView(APIView):
+    """
+    class UserCollectionRetrieveView to get the collection name of user
+    """
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -29,8 +32,11 @@ class UserCollectionRetrieveView(APIView):
         return Response(serializer.data)
 
 class SignUpView(CreateAPIView):
+    """
+    class SignUpView : to  create new user
+    """
+    permission_classes = [AllowAny]  
     serializer_class = SignupSerializer
-    permission_classes = [AllowAny]  # Ensuring the signup endpoint is publicly accessible
 
     def create(self, request, *args, **kwargs):
         # Validate user data
@@ -38,18 +44,21 @@ class SignUpView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
-        # Generate the access token directly from the RefreshToken (no need to return refresh token)
+        # Generate the access token directly from the RefreshToken 
         refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
-        # Return the user data along with the access token (only)
+        # Return the user data along with the access token 
         return Response({
-            'user': SignupSerializer(user).data,  # Return the user data
-            'access_token': access_token  # Return only the access token
+            'user': SignupSerializer(user).data,  
+            'access_token': access_token  
         }, status=status.HTTP_201_CREATED)
 
 class LoginView(GenericAPIView):
-    permission_classes = [AllowAny]  # Allow anyone to access the login endpoint
+    """
+    class LoginView : to  login the user
+    """
+    permission_classes = [AllowAny]  
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
@@ -63,12 +72,12 @@ class LoginView(GenericAPIView):
         if user is None:
             return Response({"detail": "Invalid credentials."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Generate the access token from the RefreshToken (you don't need to return the refresh token)
+        # Generate the access token from the RefreshToken 
         refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
-        # Return the response with the access token (no need to send refresh token)
+        # Return the response with the access token
         return Response({
             'message': 'Login successful',
-            'access_token': access_token  # Only return the access token
+            'access_token': access_token  
         }, status=status.HTTP_200_OK)

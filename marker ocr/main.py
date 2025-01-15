@@ -35,8 +35,8 @@ def parse_pdf(input_folder, output_folder, workers=4, max_files=10):
 
 if __name__ == "__main__":
     # Define input and output folder paths
-    input_folder = r"D:\Users\rana.hosny\Downloads\gan task\ocr part\marker ocr\Team_CVs"
-    output_folder = r"D:\Users\rana.hosny\Downloads\gan task\ocr part\marker ocr\output"
+    input_folder = "input"
+    output_folder = "output"
     
     # Call the function to parse PDFs
     parse_pdf(input_folder, output_folder, workers=4, max_files=30)

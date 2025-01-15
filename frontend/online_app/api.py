@@ -1,11 +1,12 @@
 import requests
 import streamlit as st
-
+import os
+backend_url = os.getenv("BACKEND_URL", "http://localhost:8001")
 class APIClient:
     """
     A client for interacting with the local Django REST API.
     """
-    BASE_URL = "http://127.0.0.1:8000/chatbot"
+    BASE_URL = f"{backend_url}/chatbot"
 
     @staticmethod
     def get_headers():
@@ -31,7 +32,7 @@ class APIClient:
         try:
             response = requests.post(url, json=data, headers=APIClient.get_headers())
             response.raise_for_status()
-            return response.json().get("id")  # Return the conversation ID
+            return response.json().get("id")  
         except requests.exceptions.RequestException as e:
             print(f"Failed to create conversation: {e}")
             return None
@@ -51,7 +52,7 @@ class APIClient:
         try:
             response = requests.post(url, json=data, headers=APIClient.get_headers())
             response.raise_for_status()
-            return response.json()  # Return the response JSON with message details
+            return response.json()  
         except requests.exceptions.RequestException as e:
             print(f"Failed to send message: {e}")
             return None
@@ -66,7 +67,7 @@ class APIClient:
         try:
             response = requests.get(url, headers=APIClient.get_headers())
             response.raise_for_status()
-            return response.json()  # Return the list of conversations
+            return response.json()  
         except requests.exceptions.RequestException as e:
             print(f"Error fetching conversations: {e}")
             return []
@@ -76,7 +77,7 @@ class APIClient:
         """
         Gets a conversation response from the API based on user input and context.
         """
-        url = "https://8001-01jhd73nrtd9bf4m8n8d9ctmj5.cloudspaces.litng.ai/query"
+        url = "https://8001-01jhhtwya97h5wp60v4q27p9xy.cloudspaces.litng.ai/query"
         payload = {
             "user_input": prompt,
         }

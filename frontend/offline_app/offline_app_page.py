@@ -7,8 +7,9 @@ import io
 # Page 1 (PDF Uploader and Parser)
 def page_1():
     api_client = APIClient()
-    collection_name=api_client.get_user_collection()
-    api_client.send_collection_name(collection_name)
+    if "collection_name" not in st.session_state:
+        st.session_state.collection_name=api_client.get_user_collection()
+        api_client.send_collection_name(st.session_state.collection_name)
     st.subheader("Setup Database")
     st.write("Upload multiple PDF files to be used in the database.")
 
@@ -41,12 +42,14 @@ def page_1():
         zip_buffer.seek(0)  # Rewind to the beginning of the buffer
 
         if st.button("Upload and Parse All Files"):
-            with st.spinner("Uploading and parsing files..."):
+            with st.spinner("Uploading and handling files..."):
                 # Send the zip file to the Django API
                 response = api_client.upload_pdfs(zip_buffer)
 
             if response["success"]:
-                st.success("Files parsed successfully!")
+                st.success("Files inserted into database successfully!")
+                api_client.update_token_valid()
+
             else:
                 st.error(response["error"])
 

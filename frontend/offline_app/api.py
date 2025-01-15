@@ -1,7 +1,9 @@
 import requests
 import streamlit as st
+import os 
+backend_url = os.getenv("BACKEND_URL", "http://localhost:8001")
 class APIClient:
-    def __init__(self, base_url="http://127.0.0.1:8000"):
+    def __init__(self, base_url=f"{backend_url}"):
         self.base_url = base_url
 
     def upload_pdfs(self, zip_buffer):
@@ -67,10 +69,7 @@ class APIClient:
             return {"success": False, "error": str(e)}
 
     def send_collection_name(self, collection_name):
-        endpoint = "https://8001-01jhd73nrtd9bf4m8n8d9ctmj5.cloudspaces.litng.ai/send_collection_name/"
-
-    
-
+        endpoint = "https://8001-01jhhtwya97h5wp60v4q27p9xy.cloudspaces.litng.ai/send_collection_name/"
         try:
             # Send the POST request
             response = requests.post(endpoint,data=collection_name)
@@ -85,3 +84,10 @@ class APIClient:
             return {"success": False, "error": response.json()}
         except Exception as e:
             return {"success": False, "error": str(e)}
+            
+    def update_token_valid(self):
+        url = f"{self.base_url}/chatbot/conversations/"
+        access_token = st.session_state.get("access_token", None)
+        headers = {"Authorization": f"Bearer {access_token}"} if access_token else {}
+        response = requests.put(url, headers=headers)
+        return response.json()

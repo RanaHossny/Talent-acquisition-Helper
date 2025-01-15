@@ -45,12 +45,11 @@ Key Applications:
 
 1. Implement RAG (Retrieval-Augmented Generation) with memory integration.
 2. The user asks a query.
-3. Chain the query with memory and previous retrieved documents.
+3. Chain the query with memory 
 4. Insert the chained query into LLM (Llama 3.2 Instruct) to generate a standalone question.
 5. Use the standalone question to retrieve documents from the Milvus database.
-6. Update the previous retrieved documents.
 7. Use the updated retrieved documents, query, and memory to generate the response.
-![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20202206.png)
+![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%2025-01-15%235734.png)
 
 # The sequence Diagrams:
 note :chat history (not total implemented)

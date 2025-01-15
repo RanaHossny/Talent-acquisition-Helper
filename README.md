@@ -30,5 +30,6 @@ Key Applications:
   - Manages user authentication and account operations.
 
 ## System Architecture Diagram
-![System Architecture Diagram]("./Screenshot 2025-01-15 201435.png")
+![System Architecture Diagram](https://github.com/RanaHossny/rag_chat/blob/main/Screenshot%202025-01-15%20201435.png)
+
 

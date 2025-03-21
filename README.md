@@ -52,7 +52,6 @@ Key Applications:
 ![Online App Process](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20235734.png)
 
 # The sequence Diagrams:
-note :chat history (not total implemented)
 ![User login and data processing](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/image.png)
 ![AI query](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20132316.png)
 ![chat history](https://github.com/RanaHossny/rag_chat/blob/main/images_for_readme/Screenshot%202025-01-15%20204112.png)
